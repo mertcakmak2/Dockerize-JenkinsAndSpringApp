@@ -45,6 +45,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/bin/docker:/usr/bin/docker
       - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose
+      - redis_vol:/var/lib/redis/data
 
 volumes:
   redis_vol:
+  jenkins_vol:
