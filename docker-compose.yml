@@ -24,7 +24,7 @@ services:
   springapp:
     container_name: springapp
     #build: .
-    image: mertcakmak2/jenkins-spring-app
+    image: mertcakmak2/spring-jenkins-app
     ports:
       - "5005:5005"
     environment:
