@@ -6,7 +6,7 @@ RUN mvn clean package -DskipTests
 
 FROM adoptopenjdk/openjdk11:alpine
 
-ARG JAR_FILE=target/*.jar
+ARG JAR_FILE=/project/target/*.jar
 COPY --from=build ${JAR_FILE} dockerizeappapplication.jar
 
 ENTRYPOINT ["java","-jar","/dockerizeappapplication.jar"]
