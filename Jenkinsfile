@@ -5,6 +5,12 @@ pipeline {
         jdk 'jdk11'
     }
     stages {
+        stage ('Prepare') {
+            steps {
+               echo "started build."
+            }
+        }
+
         stage ('Initialize') {
             steps {
                 sh '''
