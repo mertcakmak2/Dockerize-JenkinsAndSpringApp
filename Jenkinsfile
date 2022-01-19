@@ -17,6 +17,14 @@ pipeline {
             }
         }
 
+        stage ('Docker Login') {
+            steps {
+                sh 'cat ${DOCKER_PASSWORD}'
+                sh 'docker login -u=${DOCKER_USERNAME} -p=${DOCKER_PASSWORD}'
+            }
+        }
+
+
         stage ('Build Docker Image') {
             steps {
                 sh 'docker build -t mertcakmak2/pipeline-jenkins-spring-app .'
@@ -25,14 +33,12 @@ pipeline {
 
         stage ('Image Push to Dockerhub') {
             steps {
-                sh 'ls'
                 sh 'docker push mertcakmak2/pipeline-jenkins-spring-app'
             }
         }
 
         stage ('Run Project with docker-compose') {
             steps {
-                sh 'ls'
                 sh 'docker-compose up -d'
             }
         }
