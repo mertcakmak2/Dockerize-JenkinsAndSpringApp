@@ -15,7 +15,6 @@ pipeline {
                     sh 'mvn clean package -DskipTests'
                 }
             }
-            
         }
 
         stage ('Push to dockerhub') {
@@ -25,7 +24,6 @@ pipeline {
                 sh 'docker build -t mertcakmak2/pipeline-jenkins-spring-app .'
                 sh 'docker push mertcakmak2/pipeline-jenkins-spring-app'
             }
-            
         }
 
     }
