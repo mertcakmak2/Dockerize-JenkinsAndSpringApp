@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    privileged: true
+    user: root
+    ports:
+      - 8080:8080
+    container_name: jenkins
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+      - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose
+      - jenkins_vol:/var/lib/jenkins/data
+
+volumes:
+  jenkins_vol:
