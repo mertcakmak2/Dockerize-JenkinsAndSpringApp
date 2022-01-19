@@ -4,6 +4,8 @@ services:
   db:
     container_name: postgres
     image: postgres
+    labels:
+      scope: spring-app
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
@@ -14,6 +16,8 @@ services:
   redis:
     container_name: redis
     image: redis
+    labels:
+      scope: spring-app
     restart: always
     command: redis-server --appendonly yes
     ports:
@@ -25,6 +29,8 @@ services:
     container_name: springapp
     #build: .
     image: mertcakmak2/pipeline-jenkins-spring-app
+    labels:
+      scope: spring-app
     ports:
       - "5005:5005"
     environment:
