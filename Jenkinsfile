@@ -18,5 +18,14 @@ pipeline {
             
         }
 
+        stage ('Push to dockerhub') {
+            steps {
+                sh 'pwd'
+                sh 'ls'
+                sh 'docker ps'
+            }
+            
+        }
+
     }
 }
