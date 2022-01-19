@@ -17,11 +17,15 @@ pipeline {
             }
         }
 
-        stage ('Push to dockerhub') {
+        stage ('Build Docker Image') {
             steps {
-                sh 'pwd'
-                sh 'ls'
                 sh 'docker build -t mertcakmak2/pipeline-jenkins-spring-app .'
+            }
+        }
+
+        stage ('Image Push to Dockerhub') {
+            steps {
+                sh 'ls'
                 sh 'docker push mertcakmak2/pipeline-jenkins-spring-app'
             }
         }
