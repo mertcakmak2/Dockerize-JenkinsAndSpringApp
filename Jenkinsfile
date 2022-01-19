@@ -5,16 +5,13 @@ pipeline {
         jdk 'jdk11'
     }
     stages {
+        
         stage ('Prepare') {
             steps {
                echo "started build."
             }
         }
 
-        stage ('Build') {
-            withMaven {
-               sh "mvn clean"
-            }
-        }
+     
     }
 }
