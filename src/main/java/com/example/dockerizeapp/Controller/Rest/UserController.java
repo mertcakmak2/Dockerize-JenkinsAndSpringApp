@@ -25,7 +25,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/test")
-    public String findAll(){
+    public String testMethod(){
         return "test";
     }
 
