@@ -22,7 +22,8 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls'
-                sh 'docker ps'
+                sh 'docker build -t mertcakmak2/pipeline-jenkins-spring-app .'
+                sh 'docker push mertcakmak2/pipeline-jenkins-spring-app'
             }
             
         }
