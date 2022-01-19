@@ -24,6 +24,11 @@ public class UserController {
         return userService.findAll();
     }
 
+    @GetMapping(value = "/test")
+    public String findAll(){
+        return "test";
+    }
+
     @PostMapping(value = "")
     public User saveNewUser(@RequestBody User user){
 
