@@ -19,7 +19,7 @@ pipeline {
 
         stage ('Docker Login') {
             steps {
-                sh 'cat ${DOCKER_PASSWORD}'
+                echo ${DOCKER_PASSWORD}
                 sh 'docker login -u=${DOCKER_USERNAME} -p=${DOCKER_PASSWORD}'
             }
         }
