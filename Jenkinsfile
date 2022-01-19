@@ -30,5 +30,12 @@ pipeline {
             }
         }
 
+        stage ('Run Project with docker-compose') {
+            steps {
+                sh 'ls'
+                sh 'docker-compose up -d'
+            }
+        }
+
     }
 }
